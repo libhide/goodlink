@@ -1,18 +1,22 @@
 'use strict';
 
 const isBookPage = () => {
-  const isbnQuery = document.querySelectorAll('.content li')[3];
-  return isbnQuery != undefined && isbnQuery.innerText.includes('ISBN');
+  const detailListItems = document.querySelectorAll('.content li');
+  const searchText = 'ISBN-10';
+  let found;
+
+  found = [...detailListItems].find(item => item.textContent.includes(searchText));
+
+  return {
+    isBookPage: found ? true : false,
+    isbn: found ? found.innerText.split(':')[1].trim() : ''
+  };
 };
 
-const isbnQuery = document.querySelectorAll('.content li')[3];
-const isbn = isbnQuery.innerText.split(':')[1].trim();
+const bookPageCheck = isBookPage();
 
-if (isBookPage()) {
-  // notify background script
+if (bookPageCheck.isBookPage) {
   chrome.runtime.sendMessage({ newIconPath: 'icon-yay.png' });
-} else {
-  console.log('nooope');
 }
 
 chrome.runtime.sendMessage({
@@ -21,6 +25,6 @@ chrome.runtime.sendMessage({
 
 chrome.runtime.onMessage.addListener(({ msg }, sender, sendResponse) => {
   if (msg === 'doTheTing') {
-    chrome.runtime.sendMessage({ msg: 'openGR', isbn: isbn });
+    chrome.runtime.sendMessage({ msg: 'openGR', isbn: bookPageCheck.isbn });
   }
 });

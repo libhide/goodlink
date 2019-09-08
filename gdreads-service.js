@@ -11,7 +11,6 @@ const getBookId = async (developerKey, isbn) => {
 
 const getBookUrl = async (developerKey, isbn) => {
   const bookId = await getBookId(developerKey, isbn);
-  console.log(bookId);
   return `https://www.goodreads.com/book/show/${bookId}`;
 };
 

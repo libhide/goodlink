@@ -8,13 +8,29 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.amazon.in/*"],
+      "matches": [
+        "*://*.amazon.in/*",
+        "*://*.amazon.cn/*",
+        "*://*.amazon.co.jp/*",
+        "*://*.amazon.com.tr/*",
+        "*://*.amazon.ae/*",
+        "*://*.amazon.fr/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.it/*",
+        "*://*.amazon.nl/*",
+        "*://*.amazon.es/*",
+        "*://*.amazon.co.uk/*",
+        "*://*.amazon.ca/*",
+        "*://*.amazon.com.mx/*",
+        "*://*.amazon.com/*",
+        "*://*.amazon.com.au/*",
+        "*://*.amazon.com.br/*"
+      ],
       "js": ["content.js"]
     }
   ],
   "permissions": ["*://*.goodreads.com/*"],
   "background": {
-    "persistent": false,
     "page": "background.html"
   }
 }
