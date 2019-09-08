@@ -1,5 +1,8 @@
 'use strict';
 
+import { MSG_BOOK_PAGE_NOTIFY, MSG_OPEN_GR, MSG_EXT_CLICKED } from './constants.js';
+import Message from './models/message.js';
+
 const isBookPage = () => {
   const detailListItems = document.querySelectorAll('.content li');
   const searchText = 'ISBN-10';
@@ -13,18 +16,22 @@ const isBookPage = () => {
   };
 };
 
-const bookPageCheck = isBookPage();
+function main() {
+  const bookPageCheck = isBookPage();
 
-if (bookPageCheck.isBookPage) {
-  chrome.runtime.sendMessage({ newIconPath: 'icon-yay.png' });
+  if (bookPageCheck.isBookPage) {
+    const message = new Message(MSG_BOOK_PAGE_NOTIFY, 'icon-yay.png');
+    chrome.runtime.sendMessage(message);
+  }
+
+  const handleExtensionClick = (request, sender, sendResponse) => {
+    if (request.message === MSG_EXT_CLICKED) {
+      const message = new Message(MSG_OPEN_GR, bookPageCheck.isbn);
+      chrome.runtime.sendMessage(message);
+    }
+  };
+
+  chrome.runtime.onMessage.addListener(handleExtensionClick);
 }
 
-chrome.runtime.sendMessage({
-  msg: 'bookPage'
-});
-
-chrome.runtime.onMessage.addListener(({ msg }, sender, sendResponse) => {
-  if (msg === 'doTheTing') {
-    chrome.runtime.sendMessage({ msg: 'openGR', isbn: bookPageCheck.isbn });
-  }
-});
+export { main };

@@ -26,10 +26,11 @@
         "*://*.amazon.com.au/*",
         "*://*.amazon.com.br/*"
       ],
-      "js": ["content.js"]
+      "js": ["content-script.js"]
     }
   ],
   "permissions": ["*://*.goodreads.com/*"],
+  "web_accessible_resources": ["*"],
   "background": {
     "page": "background.html"
   }
