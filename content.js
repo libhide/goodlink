@@ -10,10 +10,14 @@ const isbn = isbnQuery.innerText.split(':')[1].trim();
 
 if (isBookPage()) {
   // notify background script
-  console.log('book page');
+  chrome.runtime.sendMessage({ newIconPath: 'icon-yay.png' });
 } else {
   console.log('nooope');
 }
+
+chrome.runtime.sendMessage({
+  msg: 'bookPage'
+});
 
 chrome.runtime.onMessage.addListener(({ msg }, sender, sendResponse) => {
   if (msg === 'doTheTing') console.log(isbn);
