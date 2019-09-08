@@ -3,10 +3,17 @@
   "name": "Goodlink",
   "version": "1.0.0",
   "description": "Auto-generated links from Amazon book pages for Goodreads",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
   "content_scripts": [
     {
       "matches": ["*://*.amazon.in/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  }
 }
