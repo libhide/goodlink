@@ -4,7 +4,19 @@
   "version": "1.0.0",
   "description": "Auto-generated links from Amazon book pages for Goodreads",
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": {
+      "16": "icons/grayed.png",
+      "48": "icons/grayed@3x.png",
+      "128": "icons/grayed@8x.png"
+    }
+  },
+  "icons": {
+    "16": "icons/grayed.png",
+    "48": "icons/grayed@3x.png",
+    "128": "icons/grayed@8x.png"
+  },
+  "background": {
+    "page": "src/html/background.html"
   },
   "content_scripts": [
     {
@@ -26,12 +38,9 @@
         "*://*.amazon.com.au/*",
         "*://*.amazon.com.br/*"
       ],
-      "js": ["content-script.js"]
+      "js": ["src/js/content-script.js"]
     }
   ],
-  "permissions": ["*://*.goodreads.com/*"],
-  "web_accessible_resources": ["*"],
-  "background": {
-    "page": "background.html"
-  }
+  "permissions": ["tabs", "*://*.goodreads.com/*"],
+  "web_accessible_resources": ["src/js/*"]
 }

@@ -20,7 +20,12 @@ function main() {
   const bookPageCheck = isBookPage();
 
   if (bookPageCheck.isBookPage) {
-    const message = new Message(MSG_BOOK_PAGE_NOTIFY, 'icon-yay.png');
+    const coloredIcons = {
+      '16': './../../icons/colored.png',
+      '48': './../../icons/colored@3x.png',
+      '128': './../../icons/colored@8x.png'
+    };
+    const message = new Message(MSG_BOOK_PAGE_NOTIFY, coloredIcons);
     chrome.runtime.sendMessage(message);
   }
 
