@@ -1,0 +1,9 @@
+{
+  "name": "goodlink",
+  "version": "1.0.0",
+  "description": "Auto-generated links from Amazon book pages for Goodreads",
+  "main": "content.js",
+  "keywords": [],
+  "author": "Ratik Sharma",
+  "license": "MIT"
+}
