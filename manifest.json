@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Goodlink",
   "version": "1.0.0",
-  "description": "Auto-generated links from Amazon book pages for Goodreads",
+  "description": "Links to Goodreads from book pages on Amazon.",
   "browser_action": {
     "default_icon": {
       "16": "icons/grayed.png",
