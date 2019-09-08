@@ -20,5 +20,7 @@ chrome.runtime.sendMessage({
 });
 
 chrome.runtime.onMessage.addListener(({ msg }, sender, sendResponse) => {
-  if (msg === 'doTheTing') console.log(isbn);
+  if (msg === 'doTheTing') {
+    chrome.runtime.sendMessage({ msg: 'openGR', isbn: isbn });
+  }
 });

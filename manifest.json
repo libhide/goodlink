@@ -12,7 +12,9 @@
       "js": ["content.js"]
     }
   ],
+  "permissions": ["*://*.goodreads.com/*"],
   "background": {
-    "scripts": ["background.js"]
+    "persistent": false,
+    "page": "background.html"
   }
 }
