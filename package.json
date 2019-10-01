@@ -1,0 +1,20 @@
+{
+  "name": "goodlink",
+  "version": "1.0.0",
+  "description": "Links to Goodreads from book pages on Amazon.",
+  "main": "content.js",
+  "keywords": [],
+  "scripts": {
+    "build:chrome": "webpack --config chrome/webpack.config.dev.js"
+  },
+  "author": "Ratik Sharma",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8"
+  }
+}

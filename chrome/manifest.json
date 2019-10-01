@@ -16,7 +16,7 @@
     "128": "icons/grayed@8x.png"
   },
   "background": {
-    "page": "src/html/background.html"
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     {
@@ -38,9 +38,9 @@
         "*://*.amazon.com.au/*",
         "*://*.amazon.com.br/*"
       ],
-      "js": ["src/js/content-script.js"]
+      "js": ["content.js"]
     }
   ],
   "permissions": ["tabs", "*://*.goodreads.com/*"],
-  "web_accessible_resources": ["src/js/*"]
+  "web_accessible_resources": ["*"]
 }
