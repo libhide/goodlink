@@ -1,6 +1,0 @@
-{
-  "chromePath": "src",
-  "devDirectory": "../dev",
-  "distDirectory": "../dist",
-  "tempDirectory": "../temp"
-}
