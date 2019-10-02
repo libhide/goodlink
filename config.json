@@ -1,0 +1,9 @@
+{
+  "chromePath": "src/chrome",
+  "operaPath": "src/chrome",
+  "bravePath": "src/chrome",
+  "edgePath": "src/chrome",
+  "firefoxPath": "src/browser",
+  "devDirectory": "dev",
+  "distDirectory": "dist"
+}

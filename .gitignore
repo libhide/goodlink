@@ -127,4 +127,7 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# Custom
 secrets.js
+dist/
+dev/
