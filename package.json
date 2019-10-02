@@ -5,7 +5,8 @@
   "main": "content.js",
   "keywords": [],
   "scripts": {
-    "build:chrome": "webpack --config chrome/webpack.config.dev.js"
+    "build:chrome": "webpack --config chrome/webpack.config.dev.js",
+    "build:firefox": "webpack --config firefox/webpack.config.dev.js"
   },
   "author": "Ratik Sharma",
   "license": "MIT",
