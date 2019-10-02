@@ -1,7 +1,7 @@
 'use strict';
 
-import { MSG_BOOK_PAGE_NOTIFY, MSG_OPEN_GR, MSG_EXT_CLICKED } from './constants.js';
-import Message from './models/message.js';
+import { MSG_BOOK_PAGE_NOTIFY, MSG_OPEN_GR, MSG_EXT_CLICKED } from './../shared/constants.js';
+import Message from './../shared/models/message.js';
 
 const isBookPage = () => {
   const detailListItems = document.querySelectorAll('.content li');
