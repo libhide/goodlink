@@ -1,7 +1,7 @@
 {
   "name": "goodlink",
   "version": "1.0.0",
-  "description": "Links to Goodreads from book pages on Amazon.",
+  "description": "A direct link to Goodreads from Amazon.",
   "main": "content.js",
   "keywords": [],
   "scripts": {
