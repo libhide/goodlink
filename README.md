@@ -1,6 +1,8 @@
 # Goodlink
 
-Links to Goodreads from book pages on Amazon.
+A direct link to Goodreads from Amazon.
+
+
 
 ## Develop
 
@@ -14,4 +16,4 @@ const developerKey = "GOODREADS_DEV_KEY";
 export { developerKey };
 ```
 
-4. Run `npm run build:dev` to build dev versions of the extension or `npm run build:dist` to build minified production ready versions.
+4. Run `npm run build:dev` to build dev versions of the extension or `npm run build:dist` to build minified, production ready versions.
