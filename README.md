@@ -1,6 +1,6 @@
 # Goodlink
 
-Links to Goodreads from book pages on Amazon.
+A direct link to Goodreads from Amazon.
 
 ## Build
 
