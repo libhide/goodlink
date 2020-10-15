@@ -13,12 +13,16 @@ const openGRListener = async (request, sender, sendResponse) => {
   }
 };
 
+const handleExtensionClick = (tab) => {
+  const message = new Message(MSG_EXT_CLICKED);
+  chrome.tabs.sendMessage(tab.id, message);
+};
+
 const bookPageNotificationListener = (request, sender, sendResponse) => {
   if (request.message === MSG_BOOK_PAGE_NOTIFY) {
-    chrome.browserAction.onClicked.addListener(tab => {
-      const message = new Message(MSG_EXT_CLICKED);
-      chrome.tabs.sendMessage(tab.id, message);
-    });
+    if (!chrome.browserAction.onClicked.hasListener(handleExtensionClick)) {
+      chrome.browserAction.onClicked.addListener(handleExtensionClick);
+    }
 
     chrome.browserAction.setIcon({
       path: request.data,
@@ -27,5 +31,5 @@ const bookPageNotificationListener = (request, sender, sendResponse) => {
   }
 };
 
-chrome.runtime.onMessage.addListener(bookPageNotificationListener);
 chrome.runtime.onMessage.addListener(openGRListener);
+chrome.runtime.onMessage.addListener(bookPageNotificationListener);

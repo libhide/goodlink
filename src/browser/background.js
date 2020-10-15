@@ -9,7 +9,6 @@ const openGRListener = async (request, sender, sendResponse) => {
   if (request.message === MSG_OPEN_GR) {
     const isbn = request.data;
     const bookUrl = await getBookUrl(developerKey, isbn);
-    console.log(bookUrl);
     browser.tabs.create({ url: bookUrl });
   }
 };
