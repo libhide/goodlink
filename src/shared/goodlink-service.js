@@ -1,9 +1,13 @@
 const isBookPage = () => {
   const detailListItems = document.querySelectorAll('#detailBullets_feature_div ul li');
-  const searchText = 'ISBN-10';
+  const isbn13SearchText = 'ISBN-13';
+  const isbn10SearchText = 'ISBN-10';
+  
   let found;
-
-  found = [...detailListItems].find(item => item.textContent.includes(searchText));
+  found = [...detailListItems].find(item => item.textContent.includes(isbn13SearchText));
+  if (!found) {
+    found = [...detailListItems].find(item => item.textContent.includes(isbn10SearchText));
+  }
 
   return {
     isBookPage: found ? true : false,
