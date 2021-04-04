@@ -1,3 +1,121 @@
 body {
   font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  color: #543826;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  color: #543826;
+}
+
+main .letter {
+  padding: 0 2.5rem;
+}
+
+main .letter p:first-child {
+  margin-top: 2rem;
+}
+
+.letter .gd {
+  font-weight: 500;
+}
+
+main .video {
+  height: 518px;
+  background-color: #e5e1d4;
+}
+
+main .cta-container {
+  display: block;
+}
+
+button.cta {
+  font-weight: 500;
+  padding: 1.25rem 2.5rem;
+  border: none;
+  border-radius: 0.31rem;
+  font-size: 1.025rem;
+  width: 100%;
+  margin: 0.625rem 0;
+  cursor: pointer;
+  color: white;
+}
+
+.cta.firefox {
+  background-color: #eb5e5e;
+}
+
+.cta.chrome {
+  background-color: #3980eb;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f7f0;
+  color: #543826;
+  margin-top: 6rem;
+  padding: 0.25rem 0;
+}
+
+footer p {
+  text-align: center;
+}
+
+/* Media Queries */
+@media screen and (min-width: 660px) {
+  main {
+    font-size: 1.5rem;
+  }
+
+  main .letter {
+    padding: 0 4.125rem;
+  }
+
+  main .cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4rem;
+  }
+
+  button.cta {
+    margin: 0 3rem;
+    font-size: 1.125rem;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  button.cta:hover {
+    opacity: 0.9;
+  }
+
+  footer {
+    padding: 0.5rem 0;
+  }
 }
