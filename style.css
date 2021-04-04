@@ -18,6 +18,10 @@ main .letter {
   padding: 0 2.5rem;
 }
 
+main .letter p {
+  margin-bottom: 24px;
+}
+
 main .letter p:first-child {
   margin-top: 2rem;
 }
@@ -80,7 +84,7 @@ footer {
   justify-content: center;
   background-color: #f9f7f0;
   color: #543826;
-  margin-top: 6rem;
+  margin-top: 4rem;
   padding: 0.25rem 0;
 }
 
@@ -117,5 +121,6 @@ footer p {
 
   footer {
     padding: 0.5rem 0;
+    margin-top: 6rem;
   }
 }
